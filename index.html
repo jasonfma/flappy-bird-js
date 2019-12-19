@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./player.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Permanent Marker' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -26,29 +27,9 @@
         style="background:url('http://s2js.com/img/etc/flappyback.png');  background-size: 100%; height: 95% "
 </canvas>
 <h3> <i onclick="myFunction(this)" class="fa fa-thumbs-up"></i></h3>
+
 <script>
 
-    function play(bird, pipes, fly) {
-      for (var i = 0; i < pipes.length; i++) {
-        var pipe = pipes[i];
-
-        if (pipe.isTop) {
-          console.log("top pipe found")
-          console.log("x", pipe.x)
-          console.log("y", pipe.y)
-          console.log("height", pipe.height)
-        } else {
-          console.log("top pipe found")
-          console.log("x", pipe.x)
-          console.log("y", pipe.y)
-          console.log("height", pipe.height)
-        }
-      }
-
-      // don't crash on the ground
-      if (myCanvas.height - bird.y < 100)
-        fly();
-    }
 
     function fly() {
       if (bird.y >= 0) {
@@ -227,7 +208,7 @@
       case 'running': {
         time_game_last_running = new Date();
         bottom_bar_offset = bottom_bar_offset + pipe_speed;
-        play(bird, pipes, fly)
+        play(myCanvas, bird, pipes, fly)
         show_the_pipes();
         make_bird_tilt_appropriately();
         make_bird_slow_and_fall();
