@@ -8,7 +8,7 @@ function play(world, bird, pipes, fly) {
   //     console.log("y", pipe.y)
   //     console.log("height", pipe.height)
   //   } else {
-  //     console.log("top pipe found")
+  //     console.log("bottom pipe found")
   //     console.log("x", pipe.x)
   //     console.log("y", pipe.y)
   //     console.log("height", pipe.height)
